@@ -8,6 +8,6 @@ import org.springframework.context.ConfigurableApplicationContext;
 public class ProjectBoardApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(ProjectBoardApplication.class, args).close();
+        SpringApplication.run(ProjectBoardApplication.class, args);
     }
 }
