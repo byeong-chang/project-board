@@ -23,9 +23,9 @@ import java.util.Set;
         @Index(columnList = "createdAt"),
         @Index(columnList = "createdBy")
 })
-@EntityListeners(AuditingEntityListener.class)
+//@EntityListeners(AuditingEntityListener.class)
 @Entity
-public class Article {
+public class Article extends AuditingFields{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;//아이디
@@ -39,10 +39,10 @@ public class Article {
     @ToString.Exclude // 순환 참조가 발생해서 메모리가 뻗을 수 있어서 추가하는 옵션
     private final Set<ArticleComment> articleComments = new LinkedHashSet<>();
 
-    @CreatedDate @Column(nullable = false) private LocalDateTime createdAt;//생성일시
-    @CreatedBy @Column(nullable = false,length = 100) private String createdBy; //생성자
-    @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt;//수정일시
-    @LastModifiedBy @Column(nullable = false,length = 100) private String modifiedBy;//수정자
+//    @CreatedDate @Column(nullable = false) private LocalDateTime createdAt;//생성일시
+//    @CreatedBy @Column(nullable = false,length = 100) private String createdBy; //생성자
+//    @LastModifiedDate @Column(nullable = false) private LocalDateTime modifiedAt;//수정일시
+//    @LastModifiedBy @Column(nullable = false,length = 100) private String modifiedBy;//수정자
 
     protected Article() {
     }
